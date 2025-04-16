@@ -1,4 +1,26 @@
-***** This is a Arduino code for esp32s3.*****
-***** The code set up one nrf24 module to the SPI. The nrf24 use 110 channel and "ABCDE" address. The transmission over this nrf24 is a simple unsafe one (no ACK, no interrupt).*****
-***** The matched nrf24 sender is sending a data frame which includes "5 bytes header + 27 bytes data". For each of the sensory data from each sensors, the nrf24 send data frame separately. 
-      Data in one group means sensors get data under same physical timestamp.*****
+# ESP32-S3 + NRF24L01 Receiver
+
+This is an Arduino sketch for **ESP32-S3** using an NRF24L01 module.
+
+## Setup
+
+- NRF24L01 is connected to **SPI**
+- Channel: **110**
+- Address: `"ABCDE"`
+- Transmission mode: **No ACK, No interrupt** (simple & unsafe)
+
+## Data Frame Format
+
+The NRF24 sender transmits:
+
+- **5 bytes header** + **27 bytes data**
+- Each sensor sends its data in separate frames
+- One "group" of data = sensor readings taken at the **same physical timestamp**
+
+## Matched Sender
+
+The sender must follow the same NRF24 config (channel, address, payload structure).
+The data must be readed under same time stamp.
+---
+
+© 2025 menggezhang97
