@@ -19,8 +19,8 @@ The NRF24 sender transmits:
 
 ## Matched Sender
 
-The sender must follow the same NRF24 config (channel, address, payload structure).
-The data must be readed under same time stamp.
+- The sender must follow the same NRF24 config (channel, address, payload structure).
+- The data must be readed under same time stamp.
 ---
 
 © 2025 menggezhang97
